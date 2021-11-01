@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  test:
+    build:
+      context: .
+    command: "behave -f html --outfile test_results/results.html"
+    volumes:
+      - ./test_results:/app/test_results
+      
