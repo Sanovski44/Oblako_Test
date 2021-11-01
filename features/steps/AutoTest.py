@@ -1,7 +1,4 @@
 from behave import *
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 import random
 
 
@@ -114,18 +111,3 @@ def step_impl(context, text):
     elements = list(filter(lambda x: x.find_element_by_tag_name("h2").text == text, categories))
     assert len(elements) == 1
     assert elements[0].is_displayed()
-
-
-@given('we have behave installed')
-def step_impl(context):
-    pass
-
-
-@when('we implement a test')
-def step_impl(context):
-    assert True is not False
-
-
-@then('behave will test it for us!')
-def step_impl(context):
-    assert context.failed is True
